@@ -7,11 +7,18 @@ app.use(express.json())
 
 
 app.get('/ping', (req, res) => {
-    res.json(req.headers)
+  try{
+    res.json(req.headers)}
+    catch(e){
+      console.log(e)
+      res.status(500).send()
+    }
   });
+
+app.get("*",(req, res) => {
+  res.status(404).send()
+})
   
-
-
 app.listen(port, () => {
     console.log(`Server listening on ${port}`)
 });

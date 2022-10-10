@@ -5,7 +5,16 @@ dotenv.config();
 var port = process.env.PING_LISTEN_PORT;
 app.use(express.json());
 app.get('/ping', function (req, res) {
-    res.json(req.headers);
+    try {
+        res.json(req.headers);
+    }
+    catch (e) {
+        console.log(e);
+        res.status(500).send();
+    }
+});
+app.get("*", function (req, res) {
+    res.status(404).send();
 });
 app.listen(port, function () {
     console.log("Server listening on ".concat(port));
