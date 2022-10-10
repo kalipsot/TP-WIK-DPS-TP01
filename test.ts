@@ -16,7 +16,12 @@ app.get('/ping', (req, res) => {
   });
 
 app.get("*",(req, res) => {
-  res.status(404).send()
+  try{
+  res.status(404).send()}
+  catch(e){
+    console.log(e)
+    res.status(500).send()
+  }
 })
   
 app.listen(port, () => {
