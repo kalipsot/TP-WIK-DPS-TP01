@@ -9,3 +9,10 @@
 - 4 launch the server with :
 - node .\test.js
 ```
+## App explanation
+
+```
+- send a get request on /ping for geting back the headers of the request in JSON
+- other request will send a 404 error and unkown erro will send a 500 error
+
+```
