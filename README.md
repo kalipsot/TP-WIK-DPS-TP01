@@ -13,6 +13,6 @@
 
 ```
 - send a get request on http://localhost:port/ping for geting back the headers of the request in JSON
-- other request will send a 404 error and unkown erro will send a 500 error
+- other request will send a 404 error and unkown error will send a 500 error
 
 ```
